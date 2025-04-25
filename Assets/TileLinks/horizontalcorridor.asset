@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db5310bea206f545984f63756c0ba9f, type: 3}
+  m_Name: horizontalcorridor
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 06ba8e9fa09cb754f959f5d085075fe2, type: 2}
+  top: 1
+  bottom: 1
+  left: 0
+  right: 0
+  top_link_to: 02000000
+  bottom_link_to: 02000000
+  left_link_to: 0000000004000000
+  right_link_to: 0000000004000000
+  probability: 7
