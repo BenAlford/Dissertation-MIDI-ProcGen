@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 2625
+  controlID: 974
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 2566
+  controlID: 904
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 2567
+  controlID: 905
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -300,8 +300,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 312.2
-    y: 19
+    x: 311.2
+    y: 73.6
     width: 843.60004
     height: 392.6
   m_SerializedDataModeController:
@@ -358,23 +358,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1536
-      height: 682.8
-    m_Scale: {x: 0.7902778, y: 0.7902778}
-    m_Translation: {x: 768, y: 341.4}
+      width: 843.60004
+      height: 371.6
+    m_Scale: {x: 0.4300926, y: 0.4300926}
+    m_Translation: {x: 421.80002, y: 185.8}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -971.8102
+      x: -980.71906
       y: -432
-      width: 1943.6204
+      width: 1961.4381
       height: 864
     m_MinimalGUI: 1
-  m_defaultScale: 0.7902778
-  m_LastWindowPixelSize: {x: 1920, y: 879.75}
+  m_defaultScale: 0.4300926
+  m_LastWindowPixelSize: {x: 1054.5, y: 490.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a4610000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: eafaffff
       m_RenameOverlay:
@@ -851,9 +851,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.3838844, y: -0.40872788, z: 0.1588657}
+    m_Target: {x: 4.366433, y: 0.6445849, z: 0.13725276}
     speed: 2
-    m_Value: {x: 2.3838844, y: -0.40872788, z: 0.1588657}
+    m_Value: {x: 4.447449, y: 0.7030501, z: 0.1334275}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -903,9 +903,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.956793
+    m_Target: 8.118124
     speed: 2
-    m_Value: 5.956793
+    m_Value: 8.500653
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1045,7 +1045,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1053,15 +1053,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\dis\Dissertation MIDI ProcGen
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 8a640000
-    m_LastClickedID: 25738
+    m_SelectedIDs: 6e640000
+    m_LastClickedID: 25710
     m_ExpandedIDs: 000000006e64000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
