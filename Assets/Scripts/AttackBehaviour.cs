@@ -29,14 +29,13 @@ public class AttackBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // attacks with spikes after a set delay
         if (attacking)
         {
             attackWindUpTimer += Time.deltaTime;
             if (attackWindUpTimer > attackWindUpTime)
             {
-                //Color colour = GetComponentInChildren<SpriteRenderer>().color;
-                //colour.a = 1;
-                //GetComponentInChildren<SpriteRenderer>().color = colour;
+                // shows the spike and hides the warning
                 GetComponent<SpriteRenderer>().enabled = false;
                 spike.enabled = true;
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -48,12 +47,14 @@ public class AttackBehaviour : MonoBehaviour
                 playerPos.y = Mathf.Round(player.transform.position.y);
                 playerPos.z = Mathf.Round(player.transform.position.z);
 
+                // damages the player if they are on the spike
                 if (playerPos == transform.position)
                 {
                     player.GetComponent<PlayerBehaviour>().Damage();
                 }
             }
         }
+        // removes the spike after a short delay
         else
         {
             attackLingerTimer += Time.deltaTime;

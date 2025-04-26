@@ -10,9 +10,8 @@ public class CellData
     public List<int> domain = new List<int>();
     public bool placed = false;
 
- // a list for each direction, the tiles that can be adjacent, calculated at the start
- // updated everytime the domain is updated, the removed tile number is passed through to this and removed from that list
- // I think maybe
+    // a list for each direction, the tiles that can be adjacent, calculated at the start
+    // updated everytime the domain is updated, the removed tile number is passed through to this and removed from that list
 }
 
 public class ProcGenTest : MonoBehaviour

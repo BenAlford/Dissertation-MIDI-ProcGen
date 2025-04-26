@@ -96,7 +96,7 @@ public class AnalyseMap : MonoBehaviour
         Instantiate(exit).transform.position = new Vector3(posX, posY);
         spawnedObjectLocs.Add(new Vector2Int(posX, posY));
 
-
+        // spawns enemiess
         SpawnEnemies(unoccupiedRooms);
 
         lightingManager.SetRooms(rooms, playerSpawnRoom);
@@ -212,8 +212,11 @@ public class AnalyseMap : MonoBehaviour
     {
         for (int i = 0; i < enemyRooms.Count; i++)
         {
+            // calculates the size of the room
             int size = (rooms[enemyRooms[i]].size.x + 2) * (rooms[enemyRooms[i]].size.y + 2);
             float sizeEnemyScaleFactor = 0;
+
+            // sets the size scale factor accordingly
             if (size > 36)
             {
                 sizeEnemyScaleFactor = 1;
@@ -223,10 +226,14 @@ public class AnalyseMap : MonoBehaviour
                 sizeEnemyScaleFactor = size / 36f;
             }
 
+            // sets the arousal scale factor
             float arousalScaleFactor = (arousal - 1) / 8;
+
+            // calculates the enemies spawning in this room from those scale factors (guarentees one enemy)
             int enemies = Mathf.RoundToInt(1 + ((maxEnemiesInRoom-1) * sizeEnemyScaleFactor * arousalScaleFactor));
             totalEnemies += enemies;
 
+            // spawns the enemy at a random location in the room
             for (int j = 0; j < enemies; j++)
             {
                 for (int k = 0; k < 20; k++)
@@ -234,8 +241,10 @@ public class AnalyseMap : MonoBehaviour
                     int posX = Random.Range(rooms[enemyRooms[i]].startPos.x - 1, rooms[enemyRooms[i]].startPos.x + rooms[enemyRooms[i]].size.x + 2);
                     int posY = Random.Range(rooms[enemyRooms[i]].startPos.y - 1, rooms[enemyRooms[i]].startPos.y + rooms[enemyRooms[i]].size.y + 2);
 
+                    // only spawns the enemy if the space is unnoccupied
                     if (!spawnedObjectLocs.Contains(new Vector2Int(posX, posY)))
                     {
+                        // randomly chooses if it is a green or red slime
                         int enemyType = Random.Range(0, 2);
                         if (enemyType == 0)
                             Instantiate(enemy).transform.position = new Vector2(posX, posY);

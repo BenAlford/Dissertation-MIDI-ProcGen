@@ -34,6 +34,7 @@ public class LightingManager : MonoBehaviour
             objects.Add(obj);
         }
 
+        // shows all level objects not hidden by the shadow map
         foreach (ILevelObject obj in objects)
         {
             if (shadowMap.GetTile(obj.GetPos()) == null)

@@ -23,6 +23,8 @@ public class PlayMIDIFile : MonoBehaviour
 
     public bool play = true; 
 
+    // CONTAINS MODIFIED EXAMPLE CODE GIVEN BY THE CREATOR OF THE DRYWETMIDI LIBRARY
+
     private void Start()
     {
 
@@ -35,6 +37,7 @@ public class PlayMIDIFile : MonoBehaviour
 
     public void StartMusic()
     {
+        // starts the music and loops it
         if (!started && play)
         {
             midiFile = MidiFile.Read(Path.Combine(Application.streamingAssetsPath, _midifilepath.path));

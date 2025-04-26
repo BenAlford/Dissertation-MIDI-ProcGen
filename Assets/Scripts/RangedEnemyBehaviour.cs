@@ -9,6 +9,8 @@ public class RangedEnemyBehaviour : Enemy
         Vector3 projectileDirection = Vector3.zero;
         Vector3 direction = (player.transform.position - transform.position).normalized;
         
+
+        // calculates the closest direction (of 8 directions) to the player to shoot the projectile at
         float angle = (180/Mathf.PI) * -Mathf.Atan2(direction.x,direction.y);
 
         if (angle >= -22.5 && angle < 22.5)
@@ -44,6 +46,7 @@ public class RangedEnemyBehaviour : Enemy
             projectileDirection = new Vector3(1, 1);
         }
 
+        // Spawns the projectile
         GameObject proj = Instantiate(attack);
         proj.transform.position = transform.position + projectileDirection;
         proj.GetComponent<ProjectileBehaviour>().direction = projectileDirection;
@@ -51,6 +54,7 @@ public class RangedEnemyBehaviour : Enemy
 
     public override void Move()
     {
+        // moves to align the enemy with the player in the closest direction
         Vector3 newPos = transform.position;
 
         if (Mathf.Abs(player.transform.position.x - transform.position.x) <
@@ -77,6 +81,7 @@ public class RangedEnemyBehaviour : Enemy
             }
         }
 
+        // stops the movement if it is blocked by an enemy
         bool canMove = true;
         var a = FindObjectsOfType<Enemy>();
         foreach (Enemy enemy in a)
@@ -88,11 +93,13 @@ public class RangedEnemyBehaviour : Enemy
             }
         }
 
+        // stops the movement if it is blocked by the player
         if (player.transform.position == newPos || player.GetComponent<PlayerBehaviour>().targetPosition == newPos)
         {
             canMove = false;
         }
 
+        // stops the movement if it is blocked by terrain
         if (canMove && map.GetTile(new Vector3Int((int)newPos.x, (int)newPos.y)) != black)
         {
             transform.position = newPos;

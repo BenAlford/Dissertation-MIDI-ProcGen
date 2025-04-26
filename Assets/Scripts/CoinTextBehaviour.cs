@@ -10,6 +10,7 @@ public class CoinTextBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // displays the coin number
         GetComponent<TextMeshProUGUI>().text = "Coins: " + coinCounter.coins.ToString() + "/3";
     }
 }

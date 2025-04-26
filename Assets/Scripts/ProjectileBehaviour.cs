@@ -38,19 +38,18 @@ public class ProjectileBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // has a brief timer where a warning sign is shown before spawning
         if (!spawned)
         {
             spawnTimer += Time.deltaTime;
             if (spawnTimer > spawnTime)
             {
-                //Color colour = GetComponentInChildren<SpriteRenderer>().color;
-                //colour.a = 1;
-                //GetComponentInChildren<SpriteRenderer>().color = colour;
                 warning.enabled = false;
                 GetComponent<SpriteRenderer>().enabled = true;
                 spawned = true;
             }
         }
+        // Moves constantly in one direction until it hits a wall or player
         else
         {
             moveTimer += Time.deltaTime;
@@ -64,6 +63,7 @@ public class ProjectileBehaviour : MonoBehaviour
                 }
             }
 
+            // damages the player if hit
             if (transform.position == player.transform.position)
             {
                 player.GetComponent<PlayerBehaviour>().Damage();

@@ -17,6 +17,7 @@ public class Coin : MonoBehaviour, ILevelObject
     // Update is called once per frame
     void Update()
     {
+        // collects the coin when stepped on by the player
         if (!collected && player.transform.position == transform.position)
         {
             collected = true;

@@ -12,7 +12,7 @@ public class CustomArousalButton : MonoBehaviour
 
     public void Pressed()
     {
-        // loads the scene without music with the specified arousal value
+        // loads the scene without music with the specified arousal value and random seed
         midi.arousal = slider.value;
         midi.seed = Random.Range(10000, 1000000);
         SceneManager.LoadSceneAsync(3);

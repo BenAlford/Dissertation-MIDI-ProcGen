@@ -10,6 +10,7 @@ public class CustomArousalValue : MonoBehaviour
 
     private void Update()
     {
+        // updates the text display to the slider value
         float val = slider.value;
         val = Mathf.Round(val*100) / 100;
         GetComponent<TextMeshProUGUI>().text = val.ToString();

@@ -16,10 +16,7 @@ public class Exit : MonoBehaviour, ILevelObject
 
     private void Update()
     {
-        if (player == null)
-        {
-            print("hi");
-        }
+        // Loads the win screen when stepped on
         if (player.transform.position == transform.position)
         {
             print("You win!");

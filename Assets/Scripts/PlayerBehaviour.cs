@@ -190,6 +190,7 @@ public class PlayerBehaviour : MonoBehaviour
                 }
                 else
                 {
+                    // marks the direction the player intends to move
                     direction = Vector3.zero;
                     if (Input.GetKey(KeyCode.W))
                     {

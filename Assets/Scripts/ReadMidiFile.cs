@@ -430,7 +430,7 @@ public class ReadMidiFile : MonoBehaviour
 
         print(dynamicsArousalVal);
 
-        // calculates the weighted average for the piece's arousal val based on which factors are more important
+        // calculates the weighted average for the piece's arousal val gives tempo the greatest weight as its the most important
         float finalArousalVal = ((tempoArousalVal * 2f) + (dynamicsArousalVal * 1.5f) + (pitchArousalVal)) / 4.5f;
 
         print(finalArousalVal);

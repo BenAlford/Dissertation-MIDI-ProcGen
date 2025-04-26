@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour, ILevelObject
 
         if (active && alive)
         {
+            // after moving there is a short delay before attacking
             if (waiting)
             {
                 waitTimer += Time.deltaTime;
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour, ILevelObject
                     Attack();
                 }
             }
+            // after attacking, there is a short delay before moving
             else if (attacking)
             {
                 attackTimer += Time.deltaTime;
@@ -66,6 +68,7 @@ public class Enemy : MonoBehaviour, ILevelObject
 
     public void Activate()
     {
+        // shows the enemy and allows it to move/attack
         active = true;
         if (alive)
         {
@@ -79,6 +82,7 @@ public class Enemy : MonoBehaviour, ILevelObject
 
     public void Deactivate()
     {
+        // hides the enemy and prevents its actions
         active = false;
         GetComponent<SpriteRenderer>().enabled = false;
         for (int i = 0; i < transform.childCount; i++)
@@ -94,6 +98,7 @@ public class Enemy : MonoBehaviour, ILevelObject
 
     public void Damage()
     {
+        // reduces hp by one, kills it if hp reaches 0
         print(hp);
         hp -= 1;
         if (hp <= 0)
@@ -109,6 +114,7 @@ public class Enemy : MonoBehaviour, ILevelObject
 
     virtual public void Attack()
     {
+        // attacks the 8 squares around it
         for (float x = transform.position.x - 1; x <= transform.position.x + 1; x++)
         {
             for (float y = transform.position.y - 1; y <= transform.position.y + 1; y++)
@@ -123,6 +129,7 @@ public class Enemy : MonoBehaviour, ILevelObject
 
     virtual public void Move()
     {
+        // moves towards the player if possible
         Vector3 newPos = transform.position;
         if (player.transform.position.x > transform.position.x)
         {
@@ -142,6 +149,7 @@ public class Enemy : MonoBehaviour, ILevelObject
             newPos.y -= 1;
         }
 
+        // does not move if the space is occupied by an enemy
         bool canMove = true;
         var a = FindObjectsOfType<Enemy>();
         foreach (Enemy enemy in a)
@@ -153,11 +161,13 @@ public class Enemy : MonoBehaviour, ILevelObject
             }
         }
 
+        // does not move if the space is occupied by the player
         if (player.transform.position == newPos || player.GetComponent<PlayerBehaviour>().targetPosition == newPos)
         {
             canMove = false;
         }
 
+        // does not move if the space is a wall
         if (canMove && map.GetTile(new Vector3Int((int)newPos.x, (int)newPos.y)) != black)
         {
             transform.position = newPos;
